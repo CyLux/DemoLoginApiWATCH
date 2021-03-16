@@ -56,7 +56,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void SignUpUser(RegisterRequest registerRequest){
-        Call<RegisterResponse> registerResponseCall = ApiUsers.getService().registerUser(registerRequest);
+        Call<RegisterResponse> registerResponseCall = ApiClient.getService().registerUser(registerRequest);
         registerResponseCall.enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {

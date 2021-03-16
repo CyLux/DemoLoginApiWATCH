@@ -1,13 +1,14 @@
 package ru.startandroid.kinopoiskapp;
 
-import java.net.HttpURLConnection;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiUsers {
+public class ApiClient {
 
     public static Retrofit getRetrofit(){
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
@@ -16,6 +17,10 @@ public class ApiUsers {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
                 .build();
+
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://cinema.areas.su/")
@@ -26,9 +31,15 @@ public class ApiUsers {
         return retrofit;
     }
 
-    public static UserService getService(){
-        UserService userService = getRetrofit().create(UserService.class);
+    public static ApiService getService(){
+        ApiService userService = getRetrofit().create(ApiService.class);
 
         return userService;
+    }
+
+    public static ApiService getMovie(){
+        ApiService movieService = getRetrofit().create(ApiService.class);
+
+        return  movieService;
     }
 }

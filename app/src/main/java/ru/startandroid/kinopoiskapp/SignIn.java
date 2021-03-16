@@ -54,7 +54,7 @@ public class SignIn extends AppCompatActivity {
     }
 
     public void SignInUser(LoginRequest loginRequest){
-        Call<LoginResponse> loginResponseCall = ApiUsers.getService().loginUser(loginRequest);
+        Call<LoginResponse> loginResponseCall = ApiClient.getService().loginUser(loginRequest);
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {

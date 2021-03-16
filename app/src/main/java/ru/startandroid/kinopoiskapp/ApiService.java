@@ -1,15 +1,21 @@
 package ru.startandroid.kinopoiskapp;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
-public interface UserService {
+public interface ApiService {
 
-    @POST("auth/login/")
+    @POST("auth/login")
     Call<LoginResponse> loginUser(@Body LoginRequest loginRequest);
 
-    @POST("auth/register/")
+    @POST("auth/register")
     Call<RegisterResponse> registerUser(@Body RegisterRequest registerRequest);
+
+    @GET("/movie?filter=new")
+    Call<List<Movies>> getMovies();
 
 }
