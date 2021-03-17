@@ -15,7 +15,7 @@ public interface ApiService {
     @POST("auth/register")
     Call<RegisterResponse> registerUser(@Body RegisterRequest registerRequest);
 
-    @GET("/movie?filter=new")
+    @GET("movies?filter=new")
     Call<List<Movies>> getMovies();
 
 }

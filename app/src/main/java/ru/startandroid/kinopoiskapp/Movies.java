@@ -2,12 +2,14 @@ package ru.startandroid.kinopoiskapp;
 
 import android.graphics.Bitmap;
 
+import java.util.List;
+
 public class Movies {
 
     private int movieId;
-    private String name, description, poster;
-    private Bitmap bitmap;
-
+    private String name, description,age, poster;
+    String[] images;
+    private List<Tags> tag;
 
     public int getMovieId() {
         return movieId;
@@ -33,6 +35,14 @@ public class Movies {
         this.description = description;
     }
 
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
     public String getPoster() {
         return poster;
     }
@@ -41,16 +51,19 @@ public class Movies {
         this.poster = poster;
     }
 
-    public Bitmap getBitmap() {
-        return bitmap;
+    public String[] getImages() {
+        return images;
     }
 
-    public void setBitmap(Bitmap bitmap) {
-        this.bitmap = bitmap;
+    public void setImages(String[] images) {
+        this.images = images;
     }
 
-    @Override
-    public String toString(){
-        return name;
+    public List<Tags> getTag() {
+        return tag;
+    }
+
+    public void setTag(List<Tags> tag) {
+        this.tag = tag;
     }
 }

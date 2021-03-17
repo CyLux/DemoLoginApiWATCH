@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         MovieAdapter movieAdapter = new MovieAdapter(mMovies);
         mRecyclerView.setAdapter(movieAdapter);
 
-
-
         final Call<List<Movies>> call = ApiClient.getMovie().getMovies();
         call.enqueue(new Callback<List<Movies>>() {
             @Override
