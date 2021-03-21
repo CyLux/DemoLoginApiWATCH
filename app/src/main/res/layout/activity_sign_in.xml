@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF5722"
     tools:context=".SignIn">
 
     <LinearLayout
@@ -27,8 +26,9 @@
             android:layout_marginRight="5dp"
             android:layout_marginBottom="20dp"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
             android:gravity="center"
-            android:text="Sign In"
+            android:text="Вход"
             android:textColor="#000000"
             android:textSize="30sp" />
 
@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName" />
@@ -48,8 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:ems="10"
-            android:hint="Password"
+            android:hint="Пароль"
             android:inputType="textPassword" />
 
         <TextView
@@ -62,7 +64,7 @@
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="I don't have an account"
+            android:text="Регистрация"
             android:textColor="#000000" />
 
         <Button
@@ -71,8 +73,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="Sign In"
+            android:background="#FB594D"
+            android:text="Войти"
             android:textAllCaps="false"
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
